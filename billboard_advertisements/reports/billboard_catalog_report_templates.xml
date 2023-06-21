@@ -7,23 +7,27 @@
                     <div class="page">
                         <div class="row pb-2" style="border-bottom: 2px solid gray !important;">
                             <div class="col col-4 p-2">
-                                <span t-field="p.image_2" t-if="p.image_2"
-                                      t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100%;height:auto"}'/>
-
-                            </div>
-                            <div class="col col-4 p-2">
-                                <!--<iframe t-att-src="p.get_google_map_url()" width="100%" height="400"></iframe>-->
+                                <span t-field="p.image_1" t-if="p.image_1"
+                                      t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100% !important;height:auto !important"}'/>
 
                             </div>
                             <div class="col col-4 p-2">
                                 <span t-field="p.image_2" t-if="p.image_2"
-                                      t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100%;height:auto"}'/>
+                                      t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100% !important;height:auto !important;"}'/>
+
+                            </div>
+                            <div class="col col-4 p-2">
+                                <a t-attf-href="#{p.location}" style="padding-bottom:180px;padding-top:180px"
+                                   target="_blank">
+                                    <span t-field="p.image_map" t-if="p.image_map"
+                                          t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100% !important;height:auto !important;"}'/>
+                                </a>
 
                             </div>
                         </div>
                         <div class="row pt-2">
-                            <div class="col col-3 p-2">
-                                <table class="table table-sm">
+                            <div class="col col-4 p-2">
+                                <table class="table table-bordered">
                                     <tr>
                                         <td class="text-start" style="background-color:#f8f9fa">Unit of Measurement
                                         </td>
@@ -35,45 +39,69 @@
                                         <td class="text-start" style="background-color:#f8f9fa">Trade Measurements</td>
                                         <td class="text-start">
                                             <span t-field="p.width"/>
-                                            x
-                                            <span t-field="p.height"/>
+                                            Width
+                                            <t t-if="p.height">
+                                                x
+                                                <span t-field="p.height"/>
+                                                Height
+                                            </t>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Visible Measurements
-                                        </td>
+                                        <td class="text-start" style="background-color:#f8f9fa">Location</td>
                                         <td class="text-start">
-                                            <span t-field="p.width"/>
-                                            x
-                                            <span t-field="p.height"/>
+                                            <span t-field="p.city"/>
+                                            <t t-if="p.zone">
+                                                ,
+                                                <span t-field="p.zone"/>
+                                            </t>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Final Measurements</td>
+                                        <td class="text-start" style="background-color:#f8f9fa">Support Type</td>
                                         <td class="text-start">
-                                            <span t-field="p.width"/>
-                                            x
-                                            <span t-field="p.height"/>
+                                            <span t-field="p.space_type"/>
                                         </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="col col-3 p-2">
-                                <table class="table table-sm">
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
-                                        <td class="text-start">Table Data 2</td>
                                     </tr>
                                     <tr>
                                         <td class="text-start" style="background-color:#f8f9fa">Has Lights</td>
                                         <td class="text-start">
-                                            <span t-field="p.has_lighting"/>
+                                            <span t-if="p.has_lighting">Yes</span>
+                                            <span t-else="">No</span>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="p.has_lighting">
+                                        <td class="text-start" style="background-color:#f8f9fa">Type of Light</td>
+                                        <td class="text-start">
+                                            <span t-field="p.lighting_type"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col col-4 p-2">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Printing Substrate</td>
+                                        <td class="text-start">
+                                            <span t-field="p.printing_substrate"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Type of Lighting</td>
+                                        <td class="text-start" style="background-color:#f8f9fa">Code</td>
                                         <td class="text-start">
-                                            <span t-field="p.lighting_type"/>
+                                            <span t-field="p.default_code"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Daily Impacts</td>
+                                        <td class="text-start">
+                                            <span t-field="p.daily_impacts"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Cost Per Impact</td>
+                                        <td class="text-start">
+                                            <span t-field="p.cost_per_impact"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -84,39 +112,41 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="col col-3 p-2">
-                                <table class="table table-sm">
+                            <div class="col col-4 p-2">
+                                <table class="table table-bordered">
+                                    <t t-if="p.product_pricing_ids">
+                                        <t t-set="pricing_id" t-value="p.product_pricing_ids[0]"/>
+                                        <tr t-if="p.product_pricing_ids">
+                                            <td class="text-start" style="background-color:#f8f9fa">Type of Contract
+                                            </td>
+                                            <td class="text-start">
+                                                <span t-field="pricing_id.recurrence_id"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start" style="background-color:#f8f9fa">Lease Cost</td>
+                                            <td class="text-start">
+                                                <span t-field="pricing_id.price"/>
+                                            </td>
+                                        </tr>
+                                    </t>
                                     <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
-                                        <td class="text-start">Table Data 2</td>
+                                        <td class="text-start" style="background-color:#f8f9fa">Currency</td>
+                                        <td class="text-start">
+                                            <span t-field="p.currency_id.symbol"/>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
-                                        <td class="text-start">Table Data 2</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="col col-3 p-2">
-                                <table class="table table-sm">
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
-                                        <td class="text-start">Table Data 2</td>
+                                        <td class="text-start" style="background-color:#f8f9fa">Printing Cost</td>
+                                        <td class="text-start">
+                                            <span t-field="p.printing_cost"/>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
-                                        <td class="text-start">Table Data 2</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
-                                        <td class="text-start">Table Data 2</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
-                                        <td class="text-start">Table Data 2</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
-                                        <td class="text-start">Table Data 2</td>
+                                        <td class="text-start" style="background-color:#f8f9fa">Installation Cost</td>
+                                        <td class="text-start">
+                                            <span t-field="p.installation_cost"/>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>

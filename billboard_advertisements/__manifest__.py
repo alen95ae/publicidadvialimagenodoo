@@ -9,7 +9,7 @@
     'website': "",
     'description': """ """,
     'depends': [
-        'product', 'stock'
+        'product', 'stock', 'sale_renting',
     ],
     'data': [
         'security/ir.model.access.csv',
