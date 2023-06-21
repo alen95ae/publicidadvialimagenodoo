@@ -16,7 +16,7 @@
                             <field name="width"/>
                             <field name="height"/>
                             <field name="total_area"/>
-                            <field name="formats" widget="many2many_tags" options="{'color_field': 'color'.}"/>
+                            <field name="formats" widget="many2many_tags" options="{'color_field': 'color'}"/>
                             <field name="space_type"/>
                         </group>
                         <group>
