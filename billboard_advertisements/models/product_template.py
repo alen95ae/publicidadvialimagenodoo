@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import googlemaps
+# import googlemaps
 
 from odoo import fields, models, api
 from random import randint
@@ -24,20 +24,20 @@ class ProductTemplate(models.Model):
     image_1 = fields.Image("Image 1")
     image_2 = fields.Image("Image 2")
 
-    @api.model
-    def get_google_map_url(self):
-        if self:
-            gmaps = googlemaps.Client(key='')
-            address = "{}, {}, {}, {}".format(
-                self.street or '', self.city or '', self.state_id.name or '', self.country_id.name or ''
-            )
-            location = gmaps.geocode(address)
-            if location:
-                lat = location[0]['geometry']['location']['lat']
-                lng = location[0]['geometry']['location']['lng']
-                return "https://www.google.com/maps/embed/v1/view?key=YOUR_GOOGLE_MAPS_API_KEY&center={},{}".format(lat,
-                                                                                                                    lng)
-        return False
+    # @api.model
+    # def get_google_map_url(self):
+    #     if self:
+    #         gmaps = googlemaps.Client(key='')
+    #         address = "{}, {}, {}, {}".format(
+    #             self.street or '', self.city or '', self.state_id.name or '', self.country_id.name or ''
+    #         )
+    #         location = gmaps.geocode(address)
+    #         if location:
+    #             lat = location[0]['geometry']['location']['lat']
+    #             lng = location[0]['geometry']['location']['lng']
+    #             return "https://www.google.com/maps/embed/v1/view?key=YOUR_GOOGLE_MAPS_API_KEY&center={},{}".format(lat,
+    #                                                                                                                 lng)
+    #     return False
 
 
 class SpaceType(models.Model):
