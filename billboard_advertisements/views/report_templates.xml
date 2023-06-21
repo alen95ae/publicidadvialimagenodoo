@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="billboard_external_layout_bold">
+        <div class="header" t-att-style="report_header_style">
+            <div class="o_clean_header" style="border-bottom: 3px solid black !important; padding-bottom:15px">
+                <div class="row">
+                    <div class="col-6">
+                        <img t-if="env.company.logo" style="max-height: 50px !important;"
+                             t-att-src="image_data_uri(env.company.logo)" alt="Logo"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="article o_report_layout_bold"
+             t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+
+        <div class="footer o_clean_footer">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="list-inline mb4">
+                        <div t-field="env.company.report_footer"/>
+                    </ul>
+                    <ul t-if="report_type == 'pdf'" class="list-inline pagenumber float-end text-center">
+                        <li class="list-inline-item">
+                            <strong>
+                                <span class="page"/>
+                            </strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

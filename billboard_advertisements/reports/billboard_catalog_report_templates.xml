@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="billboard_catalog_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="p">
+                <t t-call="billboard_advertisements.billboard_external_layout_bold">
+                    <div class="page">
+                        <div class="row pb-2" style="border-bottom: 2px solid gray !important;">
+                            <div class="col col-4 p-2">
+                                <span t-field="p.image_2" t-if="p.image_2"
+                                      t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100%;height:auto"}'/>
+
+                            </div>
+                            <div class="col col-4 p-2">
+                                <!--<iframe t-att-src="p.get_google_map_url()" width="100%" height="400"></iframe>-->
+
+                            </div>
+                            <div class="col col-4 p-2">
+                                <span t-field="p.image_2" t-if="p.image_2"
+                                      t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100%;height:auto"}'/>
+
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col col-3 p-2">
+                                <table class="table table-sm">
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Unit of Measurement
+                                        </td>
+                                        <td class="text-start">
+                                            <span t-field="p.uom_id"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Trade Measurements</td>
+                                        <td class="text-start">
+                                            <span t-field="p.width"/>
+                                            x
+                                            <span t-field="p.height"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Visible Measurements
+                                        </td>
+                                        <td class="text-start">
+                                            <span t-field="p.width"/>
+                                            x
+                                            <span t-field="p.height"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Final Measurements</td>
+                                        <td class="text-start">
+                                            <span t-field="p.width"/>
+                                            x
+                                            <span t-field="p.height"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col col-3 p-2">
+                                <table class="table table-sm">
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
+                                        <td class="text-start">Table Data 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Has Lights</td>
+                                        <td class="text-start">
+                                            <span t-field="p.has_lighting"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Type of Lighting</td>
+                                        <td class="text-start">
+                                            <span t-field="p.lighting_type"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Formats</td>
+                                        <td class="text-start">
+                                            <span t-field="p.formats"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col col-3 p-2">
+                                <table class="table table-sm">
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
+                                        <td class="text-start">Table Data 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
+                                        <td class="text-start">Table Data 2</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col col-3 p-2">
+                                <table class="table table-sm">
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
+                                        <td class="text-start">Table Data 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
+                                        <td class="text-start">Table Data 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
+                                        <td class="text-start">Table Data 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
+                                        <td class="text-start">Table Data 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="background-color:#f8f9fa">Table Data 1</td>
+                                        <td class="text-start">Table Data 2</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+
+            </t>
+        </t>
+    </template>
+
+</odoo>
