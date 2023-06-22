@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="paperformat_landscape_billboard_catalog" model="report.paperformat">
+        <field name="name">European A4 Landscape</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">25</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">20</field>
+        <field name="dpi">100</field>
+    </record>
+
+    <record id="action_billboard_catalog_report" model="ir.actions.report">
+        <field name="name">Billboards Catalog</field>
+        <field name="model">product.template</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">billboard_advertisements.report_billboard_catalog</field>
+        <field name="paperformat_id" ref="billboard_advertisements.paperformat_landscape_billboard_catalog" />
+        <field name="binding_model_id" ref="product.model_product_template" />
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

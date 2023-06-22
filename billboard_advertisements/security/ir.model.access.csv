@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_space_type,access.space.type,model_space_type,base.group_user,1,1,1,1
+access_lighting_type,access_lighting_type,model_lighting_type,base.group_user,1,1,1,1
+access_format_type,access_format_type,model_format_type,base.group_user,1,1,1,1
+access_printing_substrate,access_printing_substrate,model_printing_substrate,base.group_user,1,1,1,1

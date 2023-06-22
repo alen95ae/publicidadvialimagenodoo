@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.view.inherit</field>
+        <field name="model">product.template</field>
+        <field name="priority">5</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']" position="after">
+                <page string="Billboard Info" name="billboard_info" attrs="{'invisible': [('rent_ok', '=', False)]}">
+                    <group>
+                        <group>
+                            <field name="city"/>
+                            <field name="zone"/>
+                            <field name="location" widget="url"/>
+                            <field name="formats" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            <field name="space_type"/>
+                            <field name="printing_substrate"/>
+                            <field name="has_lighting" widget="boolean_toggle"/>
+                            <!--<field name="lighting_type" attrs="{'invisible': [('has_lighting', '=', False)]}"/>-->
+                            <field name="image_map" widget="image" options="{'size': [0, 150]}"/>
+                        </group>
+                        <group>
+                            <label for="width"/>
+                            <div>
+                                <field name="width" class="oe_inline"/>
+                                <span groups="uom.group_uom">
+                                    <field name="uom_name" class="oe_inline"/>
+                                </span>
+                            </div>
+                            <label for="height"/>
+                            <div>
+                                <field name="height" class="oe_inline"/>
+                                <span groups="uom.group_uom">
+                                    <field name="uom_name" class="oe_inline"/>
+                                </span>
+                            </div>
+                            <field name="total_area"/>
+                            <field name="daily_impacts"/>
+                            <label for="cost_per_impact"/>
+                            <div>
+                                <field name="cost_per_impact" class="oe_inline" widget="monetary"
+                                       options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+                            <label for="printing_cost"/>
+                            <div>
+                                <field name="printing_cost" class="oe_inline" widget="monetary"
+                                       options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+                            <label for="installation_cost"/>
+                            <div>
+                                <field name="installation_cost" class="oe_inline" widget="monetary"
+                                       options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+                            <field name="image_1" widget="image" options="{'size': [0, 150]}"/>
+                            <field name="image_2" widget="image" options="{'size': [0, 150]}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="space_type_view_tree" model="ir.ui.view">
+        <field name="name">product.space.type.view.tree</field>
+        <field name="model">space.type</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--<record id="lighting_type_view_tree" model="ir.ui.view">
+        <field name="name">product.lighting.type.view.tree</field>
+        <field name="model">lighting.type</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>-->
+
+    <record id="format_type_view_tree" model="ir.ui.view">
+        <field name="name">product.format.type.view.tree</field>
+        <field name="model">format.type</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="printing_substrate_view_tree" model="ir.ui.view">
+        <field name="name">product.printing.substrate.view.tree</field>
+        <field name="model">printing.substrate</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_space_type_action" model="ir.actions.act_window">
+        <field name="name">Space Types</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">space.type</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <!--<record id="product_lighting_type_action" model="ir.actions.act_window">
+        <field name="name">Lighting Types</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">lighting.type</field>
+        <field name="view_mode">tree</field>
+    </record>-->
+
+    <record id="product_format_type_action" model="ir.actions.act_window">
+        <field name="name">Format Types</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">format.type</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="product_printing_substrate_action" model="ir.actions.act_window">
+        <field name="name">Printing Substrates</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">printing.substrate</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem
+            id="product_space_type_menu_action"
+            name="Space Types"
+            parent="stock.menu_stock_inventory_control"
+            action="product_space_type_action"
+            sequence="199"
+    />
+    <!--<menuitem
+            id="product_lighting_type_menu_action"
+            name="Lighting Types"
+            parent="stock.menu_stock_inventory_control"
+            action="product_lighting_type_action"
+            sequence="200"
+    />-->
+    <menuitem
+            id="product_format_type_menu_action"
+            name="Format Types"
+            parent="stock.menu_stock_inventory_control"
+            action="product_format_type_action"
+            sequence="201"
+    />
+    <menuitem
+            id="product_printing_substrate_menu_action"
+            name="Printing Substrate"
+            parent="stock.menu_stock_inventory_control"
+            action="product_printing_substrate_action"
+            sequence="202"
+    />
+
+
+</odoo>
