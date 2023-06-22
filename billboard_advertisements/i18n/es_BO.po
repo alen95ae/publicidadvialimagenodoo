@@ -280,7 +280,7 @@ msgstr "Tipo de iluminación"
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__space_type
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__space_type
 msgid "Type of Support"
-msgstr "Tipo de apoyo"
+msgstr "Tipo de soporte"
 
 #. module: billboard_advertisements
 #: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
