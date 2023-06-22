@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-22 02:29+0000\n"
-"PO-Revision-Date: 2023-06-22 02:29+0000\n"
+"POT-Creation-Date: 2023-06-22 04:53+0000\n"
+"PO-Revision-Date: 2023-06-22 04:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. module: billboard_advertisements
 #: model_terms:ir.ui.view,arch_db:billboard_advertisements.product_template_form_view_inherit
 msgid "Billboard Info"
-msgstr "Información del espacio"
+msgstr "Información de cartelera"
 
 #. module: billboard_advertisements
 #: model:ir.actions.report,name:billboard_advertisements.action_billboard_catalog_report
@@ -32,7 +32,7 @@ msgid "City"
 msgstr "Ciudad"
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Code"
 msgstr "Código"
 
@@ -44,7 +44,7 @@ msgstr ""
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__cost_per_impact
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__cost_per_impact
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Cost Per Impact"
 msgstr "Costo por impacto"
 
@@ -65,14 +65,14 @@ msgid "Created on"
 msgstr ""
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Currency"
 msgstr "Divisa"
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__daily_impacts
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__daily_impacts
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Daily Impacts"
 msgstr "Impactos diarios"
 
@@ -98,7 +98,7 @@ msgstr "Tipos de formato"
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__formats
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__formats
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Formats"
 msgstr "Formatos"
 
@@ -109,14 +109,14 @@ msgid "Has Lighting"
 msgstr "tiene iluminación"
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Has Lights"
-msgstr "tiene iluminación"
+msgstr "tiene luces"
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__height
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__height
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Height"
 msgstr "Altura"
 
@@ -143,9 +143,9 @@ msgstr "Imagen 2"
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__installation_cost
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__installation_cost
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Installation Cost"
-msgstr "Costo de Produccion"
+msgstr "Costo de instalacion"
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_format_type____last_update
@@ -172,7 +172,7 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Lease Cost"
 msgstr "Costo de arrendamiento"
 
@@ -182,15 +182,9 @@ msgid "Lighting Type"
 msgstr "Tipo de iluminación"
 
 #. module: billboard_advertisements
-#: model:ir.actions.act_window,name:billboard_advertisements.product_lighting_type_action
-#: model:ir.ui.menu,name:billboard_advertisements.product_lighting_type_menu_action
-msgid "Lighting Types"
-msgstr "Tipo de iluminación"
-
-#. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__location
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__location
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Location"
 msgstr "Ubicación"
 
@@ -214,23 +208,23 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "No"
 msgstr ""
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__printing_cost
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__printing_cost
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Printing Cost"
-msgstr "Costo de Alquiler"
+msgstr "Costo de impresión"
 
 #. module: billboard_advertisements
 #: model:ir.model,name:billboard_advertisements.model_printing_substrate
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__printing_substrate
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__printing_substrate
 #: model:ir.ui.menu,name:billboard_advertisements.product_printing_substrate_menu_action
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Printing Substrate"
 msgstr "Sustrato de impresión"
 
@@ -256,7 +250,7 @@ msgid "Space Types"
 msgstr "Tipos de soporte"
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Support Type"
 msgstr "Tipo de soporte"
 
@@ -267,19 +261,14 @@ msgid "Total Area"
 msgstr "Área total"
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Trade Measurements"
 msgstr "Medidas comerciales"
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Type of Contract"
 msgstr "Tipo de contrato"
-
-#. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
-msgid "Type of Light"
-msgstr "Tipo de iluminación"
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__lighting_type
@@ -291,24 +280,24 @@ msgstr "Tipo de iluminación"
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__space_type
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__space_type
 msgid "Type of Support"
-msgstr "Tipo de soporte"
+msgstr "Tipo de apoyo"
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Unit of Measurement"
 msgstr "Unidad de medida"
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__width
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__width
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Width"
 msgstr "Ancho"
 
 #. module: billboard_advertisements
-#: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
+#: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Yes"
-msgstr "Sí"
+msgstr ""
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__zone
