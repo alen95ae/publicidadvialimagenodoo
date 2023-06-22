@@ -106,12 +106,12 @@ msgstr "Formatos"
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__has_lighting
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__has_lighting
 msgid "Has Lighting"
-msgstr "tiene iluminación"
+msgstr "Tiene iluminación"
 
 #. module: billboard_advertisements
 #: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Has Lights"
-msgstr "tiene luces"
+msgstr "Tiene luces"
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__height
@@ -297,7 +297,7 @@ msgstr "Ancho"
 #. module: billboard_advertisements
 #: model_terms:ir.ui.view,arch_db:billboard_advertisements.report_billboard_catalog_template
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__zone
