@@ -18,7 +18,7 @@ msgstr ""
 #. module: billboard_advertisements
 #: model_terms:ir.ui.view,arch_db:billboard_advertisements.product_template_form_view_inherit
 msgid "Billboard Info"
-msgstr "Información de cartelera"
+msgstr "Información del espacio"
 
 #. module: billboard_advertisements
 #: model:ir.actions.report,name:billboard_advertisements.action_billboard_catalog_report
@@ -145,7 +145,7 @@ msgstr "Imagen 2"
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__installation_cost
 #: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
 msgid "Installation Cost"
-msgstr "Costo de instalacion"
+msgstr "Costo de Produccion"
 
 #. module: billboard_advertisements
 #: model:ir.model.fields,field_description:billboard_advertisements.field_format_type____last_update
@@ -223,7 +223,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__printing_cost
 #: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
 msgid "Printing Cost"
-msgstr "Costo de impresión"
+msgstr "Costo de Alquiler"
 
 #. module: billboard_advertisements
 #: model:ir.model,name:billboard_advertisements.model_printing_substrate
@@ -291,7 +291,7 @@ msgstr "Tipo de iluminación"
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_product__space_type
 #: model:ir.model.fields,field_description:billboard_advertisements.field_product_template__space_type
 msgid "Type of Support"
-msgstr "Tipo de apoyo"
+msgstr "Tipo de soporte"
 
 #. module: billboard_advertisements
 #: model_terms:ir.ui.view,arch_db:billboard_advertisements.billboard_catalog_report
