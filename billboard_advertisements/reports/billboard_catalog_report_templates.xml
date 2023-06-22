@@ -1,159 +1,162 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template id="billboard_catalog_report">
+    <template id="report_billboard_catalog_template">
+        <t t-call="billboard_advertisements.billboard_external_layout_bold">
+            <div class="page">
+                <div class="row pb-2" style="border-bottom: 2px solid gray !important;">
+                    <div class="col col-4 p-2">
+                        <span t-field="p.image_1" t-if="p.image_1"
+                              t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100% !important;height:auto !important"}'/>
+
+                    </div>
+                    <div class="col col-4 p-2">
+                        <span t-field="p.image_2" t-if="p.image_2"
+                              t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100% !important;height:auto !important;"}'/>
+
+                    </div>
+                    <div class="col col-4 p-2">
+                        <a t-attf-href="#{p.location}" style="padding-bottom:180px;padding-top:180px"
+                           target="_blank">
+                            <span t-field="p.image_map" t-if="p.image_map"
+                                  t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100% !important;height:auto !important;"}'/>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col col-4 p-2">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Unit of Measurement
+                                </td>
+                                <td class="text-start">
+                                    <span t-field="p.uom_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Trade Measurements</td>
+                                <td class="text-start">
+                                    <span t-field="p.width"/>
+                                    Width
+                                    <t t-if="p.height">
+                                        x
+                                        <span t-field="p.height"/>
+                                        Height
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Location</td>
+                                <td class="text-start">
+                                    <span t-field="p.city"/>
+                                    <t t-if="p.zone">
+                                        ,
+                                        <span t-field="p.zone"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Support Type</td>
+                                <td class="text-start">
+                                    <span t-field="p.space_type"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Has Lights</td>
+                                <td class="text-start">
+                                    <span t-if="p.has_lighting">Yes</span>
+                                    <span t-else="">No</span>
+                                </td>
+                            </tr>
+                            <!--<tr t-if="p.has_lighting">
+                                <td class="text-start" style="background-color:#f8f9fa">Type of Light</td>
+                                <td class="text-start">
+                                    <span t-field="p.lighting_type"/>
+                                </td>
+                            </tr>-->
+                        </table>
+                    </div>
+                    <div class="col col-4 p-2">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Printing Substrate</td>
+                                <td class="text-start">
+                                    <span t-field="p.printing_substrate"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Code</td>
+                                <td class="text-start">
+                                    <span t-field="p.default_code"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Daily Impacts</td>
+                                <td class="text-start">
+                                    <span t-field="p.daily_impacts"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Cost Per Impact</td>
+                                <td class="text-start">
+                                    <span t-field="p.cost_per_impact"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Formats</td>
+                                <td class="text-start">
+                                    <span t-field="p.formats"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col col-4 p-2">
+                        <table class="table table-bordered">
+                            <t t-if="p.product_pricing_ids">
+                                <t t-set="pricing_id" t-value="p.product_pricing_ids[0]"/>
+                                <tr t-if="p.product_pricing_ids">
+                                    <td class="text-start" style="background-color:#f8f9fa">Type of Contract
+                                    </td>
+                                    <td class="text-start">
+                                        <span t-field="pricing_id.recurrence_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start" style="background-color:#f8f9fa">Lease Cost</td>
+                                    <td class="text-start">
+                                        <span t-field="pricing_id.price"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Currency</td>
+                                <td class="text-start">
+                                    <span t-field="p.currency_id.symbol"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Printing Cost</td>
+                                <td class="text-start">
+                                    <span t-field="p.printing_cost"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start" style="background-color:#f8f9fa">Installation Cost</td>
+                                <td class="text-start">
+                                    <span t-field="p.installation_cost"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_billboard_catalog">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="p">
-                <t t-call="billboard_advertisements.billboard_external_layout_bold">
-                    <div class="page">
-                        <div class="row pb-2" style="border-bottom: 2px solid gray !important;">
-                            <div class="col col-4 p-2">
-                                <span t-field="p.image_1" t-if="p.image_1"
-                                      t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100% !important;height:auto !important"}'/>
-
-                            </div>
-                            <div class="col col-4 p-2">
-                                <span t-field="p.image_2" t-if="p.image_2"
-                                      t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100% !important;height:auto !important;"}'/>
-
-                            </div>
-                            <div class="col col-4 p-2">
-                                <a t-attf-href="#{p.location}" style="padding-bottom:180px;padding-top:180px"
-                                   target="_blank">
-                                    <span t-field="p.image_map" t-if="p.image_map"
-                                          t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:100% !important;height:auto !important;"}'/>
-                                </a>
-
-                            </div>
-                        </div>
-                        <div class="row pt-2">
-                            <div class="col col-4 p-2">
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Unit of Measurement
-                                        </td>
-                                        <td class="text-start">
-                                            <span t-field="p.uom_id"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Trade Measurements</td>
-                                        <td class="text-start">
-                                            <span t-field="p.width"/>
-                                            Width
-                                            <t t-if="p.height">
-                                                x
-                                                <span t-field="p.height"/>
-                                                Height
-                                            </t>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Location</td>
-                                        <td class="text-start">
-                                            <span t-field="p.city"/>
-                                            <t t-if="p.zone">
-                                                ,
-                                                <span t-field="p.zone"/>
-                                            </t>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Support Type</td>
-                                        <td class="text-start">
-                                            <span t-field="p.space_type"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Has Lights</td>
-                                        <td class="text-start">
-                                            <span t-if="p.has_lighting">Yes</span>
-                                            <span t-else="">No</span>
-                                        </td>
-                                    </tr>
-                                    <!--<tr t-if="p.has_lighting">
-                                        <td class="text-start" style="background-color:#f8f9fa">Type of Light</td>
-                                        <td class="text-start">
-                                            <span t-field="p.lighting_type"/>
-                                        </td>
-                                    </tr>-->
-                                </table>
-                            </div>
-                            <div class="col col-4 p-2">
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Printing Substrate</td>
-                                        <td class="text-start">
-                                            <span t-field="p.printing_substrate"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Code</td>
-                                        <td class="text-start">
-                                            <span t-field="p.default_code"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Daily Impacts</td>
-                                        <td class="text-start">
-                                            <span t-field="p.daily_impacts"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Cost Per Impact</td>
-                                        <td class="text-start">
-                                            <span t-field="p.cost_per_impact"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Formats</td>
-                                        <td class="text-start">
-                                            <span t-field="p.formats"/>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="col col-4 p-2">
-                                <table class="table table-bordered">
-                                    <t t-if="p.product_pricing_ids">
-                                        <t t-set="pricing_id" t-value="p.product_pricing_ids[0]"/>
-                                        <tr t-if="p.product_pricing_ids">
-                                            <td class="text-start" style="background-color:#f8f9fa">Type of Contract
-                                            </td>
-                                            <td class="text-start">
-                                                <span t-field="pricing_id.recurrence_id"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-start" style="background-color:#f8f9fa">Lease Cost</td>
-                                            <td class="text-start">
-                                                <span t-field="pricing_id.price"/>
-                                            </td>
-                                        </tr>
-                                    </t>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Currency</td>
-                                        <td class="text-start">
-                                            <span t-field="p.currency_id.symbol"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Printing Cost</td>
-                                        <td class="text-start">
-                                            <span t-field="p.printing_cost"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start" style="background-color:#f8f9fa">Installation Cost</td>
-                                        <td class="text-start">
-                                            <span t-field="p.installation_cost"/>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </t>
-
+                <t t-call="billboard_advertisements.report_billboard_catalog_template" t-lang="env.user.partner_id.lang"/>
             </t>
         </t>
     </template>
