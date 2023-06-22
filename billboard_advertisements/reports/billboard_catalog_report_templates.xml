@@ -70,12 +70,12 @@
                                             <span t-else="">No</span>
                                         </td>
                                     </tr>
-                                    <tr t-if="p.has_lighting">
+                                    <!--<tr t-if="p.has_lighting">
                                         <td class="text-start" style="background-color:#f8f9fa">Type of Light</td>
                                         <td class="text-start">
                                             <span t-field="p.lighting_type"/>
                                         </td>
-                                    </tr>
+                                    </tr>-->
                                 </table>
                             </div>
                             <div class="col col-4 p-2">
