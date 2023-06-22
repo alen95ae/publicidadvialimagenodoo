@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="product.product_template_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//page[@name='general_information']" position="after">
-                <page string="Billboard Info" name="billboard_info">
+                <page string="Billboard Info" name="billboard_info" attrs="{'invisible': [('rent_ok', '=', False)]}">
                     <group>
                         <group>
                             <field name="city"/>
@@ -17,7 +17,7 @@
                             <field name="space_type"/>
                             <field name="printing_substrate"/>
                             <field name="has_lighting" widget="boolean_toggle"/>
-                            <field name="lighting_type" attrs="{'invisible': [('has_lighting', '=', False)]}"/>
+                            <!--<field name="lighting_type" attrs="{'invisible': [('has_lighting', '=', False)]}"/>-->
                             <field name="image_map" widget="image" options="{'size': [0, 150]}"/>
                         </group>
                         <group>
@@ -71,7 +71,7 @@
         </field>
     </record>
 
-    <record id="lighting_type_view_tree" model="ir.ui.view">
+    <!--<record id="lighting_type_view_tree" model="ir.ui.view">
         <field name="name">product.lighting.type.view.tree</field>
         <field name="model">lighting.type</field>
         <field name="arch" type="xml">
@@ -79,7 +79,7 @@
                 <field name="name"/>
             </tree>
         </field>
-    </record>
+    </record>-->
 
     <record id="format_type_view_tree" model="ir.ui.view">
         <field name="name">product.format.type.view.tree</field>
@@ -109,12 +109,12 @@
         <field name="view_mode">tree</field>
     </record>
 
-    <record id="product_lighting_type_action" model="ir.actions.act_window">
+    <!--<record id="product_lighting_type_action" model="ir.actions.act_window">
         <field name="name">Lighting Types</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">lighting.type</field>
         <field name="view_mode">tree</field>
-    </record>
+    </record>-->
 
     <record id="product_format_type_action" model="ir.actions.act_window">
         <field name="name">Format Types</field>
@@ -137,13 +137,13 @@
             action="product_space_type_action"
             sequence="199"
     />
-    <menuitem
+    <!--<menuitem
             id="product_lighting_type_menu_action"
             name="Lighting Types"
             parent="stock.menu_stock_inventory_control"
             action="product_lighting_type_action"
             sequence="200"
-    />
+    />-->
     <menuitem
             id="product_format_type_menu_action"
             name="Format Types"
