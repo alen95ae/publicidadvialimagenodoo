@@ -10,9 +10,9 @@ class ProductTemplate(models.Model):
     city = fields.Char('City')
     zone = fields.Char('Zone')
     location = fields.Char('Location')
-    width = fields.Char('Width')
-    height = fields.Char('Height')
-    total_area = fields.Char('Total Area')
+    width = fields.Float('Width')
+    height = fields.Float('Height')
+    total_area = fields.Float('Total Area')
     formats = fields.Many2many('format.type', string="Formats")
     space_type = fields.Many2one('space.type', string="Type of Support")
     daily_impacts = fields.Char('Daily Impacts')
@@ -25,6 +25,10 @@ class ProductTemplate(models.Model):
     image_map = fields.Image("Map Image")
     printing_cost = fields.Float('Printing Cost')
     installation_cost = fields.Float('Installation Cost')
+
+    @api.onchange('width', 'height')
+    def _onchange_measures(self):
+        self.total_area = self.width * self.height
 
 
 class SpaceType(models.Model):
