@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="publicidad_customizations_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//th[@name='th_quantity']" position="before">
+            <t t-set="display_dimensions" t-value="any(l.product_uom_name == 'm²' for l in lines_to_report)"/>
+
+            <th t-if="display_dimensions" name="th_width" class="text-end">Width</th>
+            <th t-if="display_dimensions" name="th_height" class="text-end">Height</th>
+        </xpath>
+        <xpath expr="//td[@name='td_quantity']" position="before">
+            <td t-if="line.product_uom_name == 'm²'" name="td_width"><span t-field="line.width"/> m</td>
+            <td t-else="" name="td_width">-</td>
+            <td t-if="line.product_uom_name == 'm²'" name="td_height"><span t-field="line.height"/> m</td>
+            <td t-else="" name="td_height">-</td>
+        </xpath>
+        <xpath expr="//td[@name='td_name']" position="replace">
+            <td class="align-top p-2 text-start" name="td_description">
+                <span t-field="line.name"/>
+                <br/>
+                <br/>
+                <t t-if="line.display_image">
+                    <span t-field="line.product_id.image_1920" t-if="line.product_id.image_1920"
+                          t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:200px;height:auto"}'/>
+                </t>
+            </td>
+        </xpath>
+    </template>
+</odoo>
