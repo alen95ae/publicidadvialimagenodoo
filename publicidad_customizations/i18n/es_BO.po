@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* publicidad_customizations
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-04 06:49+0000\n"
+"PO-Revision-Date: 2023-07-04 06:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: publicidad_customizations
+#: model:ir.model.fields,field_description:publicidad_customizations.field_sale_order_line__display_image
+msgid "Display Image"
+msgstr "Mostrar imagen"
+
+#. module: publicidad_customizations
+#: model:ir.model.fields,field_description:publicidad_customizations.field_sale_order_line__height
+msgid "Height"
+msgstr "Altura"
+
+#. module: publicidad_customizations
+#: model:ir.model,name:publicidad_customizations.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: publicidad_customizations
+#: model:ir.model.fields,field_description:publicidad_customizations.field_sale_order_line__product_uom_name
+msgid "Unit of Measure"
+msgstr "Unidad de medida"
+
+#. module: publicidad_customizations
+#: model:ir.model.fields,field_description:publicidad_customizations.field_sale_order_line__width
+msgid "Width"
+msgstr "Ancho"
