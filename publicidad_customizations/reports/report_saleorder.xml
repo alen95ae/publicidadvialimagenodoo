@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="publicidad_customizations_report_saleorder_document" inherit_id="sale.report_saleorder_document">
-        <xpath expr="//th[@name='th_quantity']" position="before">
+        <xpath expr="//th[@name='th_priceunit']" position="replace"/>
+        <xpath expr="//td[@name='td_priceunit']" position="replace"/>
+        <xpath expr="//span[@t-field='line.product_uom']" position="replace"/>
+        <xpath expr="//th[@name='th_quantity']" position="after">
             <t t-set="display_dimensions" t-value="any(l.product_uom_name == 'm²' for l in lines_to_report)"/>
 
             <th t-if="display_dimensions" name="th_width" class="text-end">Width</th>
             <th t-if="display_dimensions" name="th_height" class="text-end">Height</th>
         </xpath>
-        <xpath expr="//td[@name='td_quantity']" position="before">
+        <xpath expr="//td[@name='td_quantity']" position="after">
             <td t-if="line.product_uom_name == 'm²'" name="td_width"><span t-field="line.width"/> m</td>
             <td t-else="" name="td_width">-</td>
             <td t-if="line.product_uom_name == 'm²'" name="td_height"><span t-field="line.height"/> m</td>
