@@ -6,12 +6,13 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="before">
-                <field name="display_image" widget="boolean_toggle"/>
+                <field name="design_image" widget="image"/>
             </xpath>
-            <xpath expr="//field[@name='order_line']/tree//field[@name='product_uom_qty']" position="before">
+            <xpath expr="//field[@name='order_line']/tree//field[@name='product_uom_qty']" position="after">
                 <field name="width" attrs="{'readonly': [('product_uom_name', '!=', 'm²')]}"/>
                 <field name="product_uom_name" invisible="1"/>
                 <field name="height" attrs="{'readonly': [('product_uom_name', '!=', 'm²')]}"/>
+                <field name="total_in_m2"/>
             </xpath>
         </field>
     </record>
