@@ -18,8 +18,8 @@
                 <span t-field="line.name"/>
                 <br/>
                 <br/>
-                <t t-if="line.display_image">
-                    <span t-field="line.product_id.image_1920" t-if="line.product_id.image_1920"
+                <t t-if="line.design_image">
+                    <span t-field="line.design_image"
                           t-options='{"widget": "image", "qweb_img_responsive": False, "class": "o_image_128_max", "style": "width:200px;height:auto"}'/>
                 </t>
             </td>
